@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+
+namespace VCode
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Title = "Calculator"; //Title of the program
+            
+            for (int i = 0; i < 1; i++)
+            {
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            
+            Console.WriteLine("Please input a number:        ");
+            double a = Convert.ToDouble(Console.ReadLine());
+
+
+            Console.WriteLine("Please input a second number: ");
+            double b = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Please input the operation you want to make (it can be '+', '-', '*', '/' or '%': \n");
+            string c = Convert.ToString(Console.ReadLine());
+
+            Console.ForegroundColor = ConsoleColor.Green;
+
+           switch (c)
+           {
+              case "+":
+              Console.Write("\nThe result is: ");
+              Console.WriteLine(a + b + "\n\n");
+              break;
+
+              case "-":
+              Console.Write("\nThe result is: ");
+              Console.WriteLine(a - b + "\n\n");
+              break;
+
+              case "*":
+              Console.WriteLine("\nThe result is: " + a * b + "\n\n");
+              break;
+
+              case "/":
+              Console.WriteLine("\nThe result is: " + a / b + "\n\n");
+              break;
+
+              case "%":
+              Console.WriteLine("\nThe result is: " + (a / b) * 100 + "%\n\n");
+              break; 
+
+              default:
+              Console.ForegroundColor = ConsoleColor.Red;
+              Console.WriteLine("\nSomething went wrong with the third input. Please make sure it's '+', '-', '*', '/' or '%'.\n\n");
+              break;
+
+           }
+
+           Console.ForegroundColor = ConsoleColor.Gray;
+           
+           Console.WriteLine("Please input a whole number less than '1' (0, -1, etc.) to make another calculation.\nIf you wish to exit, input a whole number equal or more than '1'. \n");
+              
+              int q = Convert.ToInt32(Console.ReadLine());
+              Console.WriteLine("\n");
+
+              if (q < 1)
+              {
+                i--;            // Console.ReadKey(); isn't needed
+              }
+
+
+           }           
+        }     
+    }
+}
