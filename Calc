@@ -39,7 +39,7 @@ namespace VCode
               Console.ForegroundColor = ConsoleColor.Gray;
               Console.WriteLine(" since the 50% of 50 is 25\n\n");
             
-              Console.WriteLine("\nNow please the operation you want to make ('+', '-', '*', '/', '%1' or '%2'):");
+              Console.WriteLine("\nNow please input the operation you want to make ('+', '-', '*', '/', '%1' or '%2'):");
               c = Console.ReadLine();
             }
             
