@@ -7,7 +7,7 @@ namespace VCode
     {
         static void Main(string[] args)
         {
-
+            
             Console.Title = "Calculator"; //Title of the program
             
             for (int i = 0; i < 1; i++)
@@ -22,10 +22,29 @@ namespace VCode
             Console.WriteLine("Please input a second number: ");
             double b = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Please input the operation you want to make (it can be '+', '-', '*', '/' or '%': \n");
+            Console.WriteLine("\nPlease input the operation you want to make (it can be '+', '-', '*', '/', '%1' or '%2')\n\n('%1' will show what % is a number out of a number. '%2' will show you how much is the percentage of a number)\nType in 'examples' if you did not understand this description.\n");
             string c = Convert.ToString(Console.ReadLine());
 
-            Console.ForegroundColor = ConsoleColor.Green;
+            if (c == "examples")
+            {
+              Console.Write("\nExample of %1: \n\nIf the first input is 25 and the second input is 50, the result will be ");
+              Console.ForegroundColor = ConsoleColor.Green;
+              Console.Write("50%");
+              Console.ForegroundColor = ConsoleColor.Gray;
+              Console.Write(" since 25 is the 50% of 50");
+
+              Console.Write("\nExample of %2: \n\nIf the first input is 50 and the second input is 50, the result will be ");
+              Console.ForegroundColor = ConsoleColor.Green;
+              Console.Write("25");
+              Console.ForegroundColor = ConsoleColor.Gray;
+              Console.WriteLine(" since the 50% of 50 is 25\n\n");
+            
+              Console.WriteLine("\nNow please the operation you want to make ('+', '-', '*', '/', '%1' or '%2'):");
+              c = Console.ReadLine();
+            }
+            
+            
+             Console.ForegroundColor = ConsoleColor.Green;
 
            switch (c)
            {
@@ -40,16 +59,24 @@ namespace VCode
               break;
 
               case "*":
-              Console.WriteLine("\nThe result is: " + a * b + "\n\n");
+              Console.Write("\nThe result is: ");
+              Console.WriteLine(a * b + "\n\n");
               break;
 
               case "/":
-              Console.WriteLine("\nThe result is: " + a / b + "\n\n");
+              Console.Write("\nThe result is: ");
+              Console.WriteLine(a / b + "\n\n");
               break;
 
-              case "%":
-              Console.WriteLine("\nThe result is: " + (a / b) * 100 + "%\n\n");
-              break; 
+              case "%1":
+              Console.Write("\nThe result is: ");
+              Console.WriteLine((a / b) * 100 + "%\n\n");
+              break;
+
+              case "%2":
+              Console.Write("\nThe result is: ");
+              Console.WriteLine(b * a/100);
+              break;
 
               default:
               Console.ForegroundColor = ConsoleColor.Red;
@@ -60,15 +87,17 @@ namespace VCode
 
            Console.ForegroundColor = ConsoleColor.Gray;
            
-           Console.WriteLine("Please input a whole number less than '1' (0, -1, etc.) to make another calculation.\nIf you wish to exit, input a whole number equal or more than '1'. \n");
-              
-              int q = Convert.ToInt32(Console.ReadLine());
-              Console.WriteLine("\n");
-
-              if (q < 1)
-              {
-                i--;            // Console.ReadKey(); isn't needed
-              }
+           Console.Write("Do you want to exit?\ny/n: ");
+           string d = Console.ReadLine();
+            
+           if (d == "y")
+           {
+               
+           }  else
+           {
+               i--;
+               Console.Write("\n\n");
+           } 
 
 
            }           
