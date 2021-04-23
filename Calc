@@ -90,7 +90,7 @@ namespace VCode
            Console.Write("Do you want to exit?\ny/n: ");
            string d = Console.ReadLine();
             
-           if (d == "y")
+           if (d == "y" || d == "Y")
            {
                
            }  else
